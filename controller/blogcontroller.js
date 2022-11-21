@@ -43,6 +43,7 @@ const createBlog = async function (req, res) {
 const getBlogData = async function (req, res) {
   try {
     let data = req.query
+
     data.isDeleted = false
     data.isPublished = true
     let Id = req.query.authorId
@@ -107,7 +108,7 @@ const deleteBlogById = async (req, res) => {
     res.status(200).send({ status: true, msg: "Deleted" })
   } catch (err) {
     res.status(500).send({ status: false, error: err.message });
-  }
+  }0
 }
 
 const deleteBlogs = async (req, res) => {
